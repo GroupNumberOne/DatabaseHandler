@@ -6,7 +6,7 @@ import java.sql.Statement;
 
 public class testsingleton {
 	public static void main(String args[]) throws SQLException{
-		DBConnectorSingleton dbcs = DBConnectorSingleton.getInstance("145.24.222.158", "21", "INFPRJ01-56", "postgres", "GroeP1");
+		DBConnectorSingleton dbcs = DBConnectorSingleton.getInstance("145.24.222.158", "5432", "INFPRJ01-56", "postgres", "GroeP1");
 		
 		Statement st = dbcs.getDBConn().createStatement();
 		ResultSet rs = st.executeQuery("SELECT voornaam, achternaam FROM cv");
@@ -19,6 +19,6 @@ public class testsingleton {
 		rs.close();
 		st.close();
 		
-		DBConnectorSingleton dbcs1 = DBConnectorSingleton.getInstance("145.24.222.158", "21", "INFPRJ01-56", "postgres", "GroeP1");
+		DBConnectorSingleton dbcs1 = DBConnectorSingleton.getInstance("145.24.222.158", "5432", "INFPRJ01-56", "postgres", "GroeP1");
 	}
 }
